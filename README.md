@@ -1,6 +1,7 @@
 # study
 스터디
 
+
 ## Javascript
 
 ### ES6
@@ -14,16 +15,20 @@
   const obj2 = { ['ab' + 'c']: 3 };  // { abc: 3 }
   ```
 
-### Function
-- Javascript의 함수는 1급 객체 : HoC, Currying, Memoization이 가능
-  - 변수(variable)에 담음
-  - 인자(parameter)로 전달
-  - 반환값(return value)으로 전달
-- 화살표 함수와 function 선언 함수의 차이
-  - 생성자로 사용할 수 없다.
-  - 함수 내에 arguments 바인딩이 존재하지 않는다.
-  - prototype 프로퍼티를 갖고 있지 않는다
-
+### Array
+- `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
+- fill
+  - `arr.fill(val, start, end)` : 지정된 인덱스 채우기
+  - `const arr = Array(length).fill(value)` : 배열을 생성 및 채우기
+- `arr.pop()` : 배열에서 마지막 요소를 제거
+- `arr.push()` : 배열 뒤로 추가
+- `arr.shift()` : 배열의 맨 앞쪽 제거
+- `arr.unshift(val1, val2)` : 배열 앞으로 추가
+- splice
+  - `arr.splice(start, deleteCount)` : 제거
+  - `arr.splice(1, 0, 'Feb')` : 추가
+  - `arr.splice(4, 1, 'May')` : 대체
+  
 ### Loops and iteration
 - while 과 do while 의 차이 : 최초 실행 여부  
   ``` javascript
@@ -92,19 +97,19 @@
   console.log(...iterableObj); // [1, 2, 3]
   ```
 
-### Array
-- `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
-- fill
-  - `arr.fill(val, start, end)` : 지정된 인덱스 채우기
-  - `const arr = Array(length).fill(value)` : 배열을 생성 및 채우기
-- `arr.pop()` : 배열에서 마지막 요소를 제거
-- `arr.push()` : 배열 뒤로 추가
-- `arr.shift()` : 배열의 맨 앞쪽 제거
-- `arr.unshift(val1, val2)` : 배열 앞으로 추가
-- splice
-  - `arr.splice(start, deleteCount)` : 제거
-  - `arr.splice(1, 0, 'Feb')` : 추가
-  - `arr.splice(4, 1, 'May')` : 대체
+### Function
+- Javascript의 함수는 1급 객체 : HoC, Currying, Memoization이 가능
+  - 변수(variable)에 담음
+  - 인자(parameter)로 전달
+  - 반환값(return value)으로 전달
+- 화살표 함수와 function 선언 함수의 차이
+  - 생성자로 사용할 수 없다.
+  - 함수 내에 arguments 바인딩이 존재하지 않는다.
+  - prototype 프로퍼티를 갖고 있지 않는다
+
+### Sync / Async
+- 콜백을 사용한 비동기 작업 처리 : 작업의 단계가 깊어짐에 따라 들여쓰기 또한 급격히 깊어짐
+- Promise
 
 ## 알고리즘
 
