@@ -14,3 +14,25 @@
   - `arr.splice(start, deleteCount)` : 제거
   - `arr.splice(1, 0, 'Feb')` : 추가
   - `arr.splice(4, 1, 'May')` : 대체
+
+## 알고리즘
+
+- [쇠막대기](https://programmers.co.kr/learn/courses/30/lessons/42585) : [참고](https://medium.com/@nsh235482/java-coding-programmers-stack-queue-lv2-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0-d3c482da3d98)
+  ``` javascript
+  function solution(arrangement) {
+      let stack = 0;
+      const array = arrangement.replace(/\(\)/g, '|').split('');
+      const result = array.reduce((acc, curr) => {
+          if (curr === '|') {
+              return acc = acc + stack;
+          } else if (curr === '(') {
+              stack = stack + 1;
+              return acc;
+          } else if (curr === ')') {
+              stack = stack - 1;
+              return acc = acc + 1;
+          }
+      }, 0);
+      return result;
+  }
+  ```
