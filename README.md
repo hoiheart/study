@@ -3,6 +3,16 @@
 
 ## Javascript
 
+### Loops and iteration
+- while 과 do while 의 차이 : 최초 실행 여부  
+  ``` javascript
+  let i = 0;
+  do {
+    i = i + 1;
+  } while (i < 5);
+  ```
+  > while(true) {break;} 패턴으로 써도 
+
 ### Array
 - `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
 - fill
