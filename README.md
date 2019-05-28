@@ -5,7 +5,14 @@
 
 ### ES6
 - let, const : 블록 수준 스코프, 호이스팅 (변수 선언 후 재할당 가능)
-  > var : 함수 수준 스코프, 호이스팅 (변수 선언 전 값 할당 가능)
+- var : 함수 수준 스코프, 호이스팅 (변수 선언 전 값 할당 가능)
+- 비구조화 할당 : `const [a, b] = [1, 2]`
+- 계산된 속성 이름
+  ```javascript
+  const val = 'value';
+  const obj1 = { [value]: 3 };  // { value: 3 }
+  const obj2 = { ['ab' + 'c']: 3 };  // { abc: 3 }
+  ```
 
 ### Loops and iteration
 - while 과 do while 의 차이 : 최초 실행 여부  
