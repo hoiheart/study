@@ -43,6 +43,54 @@
     console.log(lang);
   }
   ```
+- 이터레이터 프로토콜
+  - 객체가 특정 조건을 만족하는 next() 메소드를 가짐
+  - next() 가 호출될 때마다 done(boolean), value(done === false) 객체 반환
+  ```javascript
+  function makeIterator(array) {
+      var nextIndex = 0;
+      return {
+         next: function() {
+             return nextIndex < array.length
+                 ? { value: array[nextIndex++], done: false } 
+                 : { done: true};
+         }
+      };
+  }
+  const iter = makeIterator([1, 2, 3]);
+  iter.next(); // { value: 1, done: false }
+  iter.next(); // { value: 2, done: false }
+  iter.next(); // { value: 3, done: false }
+  iter.next(); // { done: true }
+  ```
+- 이터러블 프로토콜
+  - 객체가 Symbol.iterator의 키의 값으로 메소드를 갖고, 해당 메소드를 실행했을 때 이터레이터 인스턴스가 반환됨
+  - Array, Map, Set 등의 표준 객체는 모두 이터러블 프로토콜을 구현
+  - 동일할 문법으로 여러 객체를 순회할 수 있는 수단을 제공
+  ```javascript
+  function makeIterator(array) {
+      var nextIndex = 0;
+      return {
+         next: function() {
+             return nextIndex < array.length
+                 ? { value: array[nextIndex++], done: false } 
+                 : { done: true};
+         }
+      };
+  }
+  const iterableObj = {
+    [Symbol.iterator]() { return makeIterator([1, 2, 3]); }
+  };
+  
+  for (const elem of iterableObj) {
+    console.log(elem);
+  }
+  // 1
+  // 2
+  // 3
+  
+  console.log(...iterableObj); // [1, 2, 3]
+  ```
 
 ### Array
 - `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
