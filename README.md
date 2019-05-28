@@ -14,6 +14,12 @@
   const obj2 = { ['ab' + 'c']: 3 };  // { abc: 3 }
   ```
 
+### Function
+- Javascript의 함수는 1급 객체 : HoC, Currying, Memoization이 가능
+  - 변수(variable)에 담음
+  - 인자(parameter)로 전달
+  - 반환값(return value)으로 전달
+
 ### Loops and iteration
 - while 과 do while 의 차이 : 최초 실행 여부  
   ``` javascript
