@@ -160,7 +160,7 @@
 
 ## Typescript
 
-### 기초 
+### 기초 문법
 - 타입 표기는 식별자 또는 값 뒤에 콜론(:)을 붙여 value: type 의 형태로 표기  
   `const typescript: string = "great";`
 - void : 아무런 값도 반환하지 않는 함수의 반환 타입 (null or undefined)
@@ -196,6 +196,18 @@
   ```javascript
   const arrowSum: (a: number, b: number) => number = (a, b) => (a + b);
   ```
+ - 제너릭 타입 : 여러 타입에 대해 동작하는 요소를 정의하되, 해당 요소를 사용할 때가 되어야 알 수 있는 타입 정보를 정의에 사용
+  ```javascript
+  type MyArray<T> = T[];
+  const drinks: MyArray<string> = ['Coffee', 'Milk', 'Beer'];
+  ```
+- 유니온 타입 : 가능한 모든 타입을 파이프(|) 기호로 이어서 표현
+  ```javascript
+  const stringOrNumber: string | number = square(randomNumber, randomBoolean);
+  ```
+- 인터섹션 타입 : 이미 존재하는 여러 타입을 모두 만족하는 타입을 표현
+- 열거형(enum) 타입 : 유한한 경우의 수를 갖는 값의 집합을 표현
+
 
 ## 알고리즘
 
