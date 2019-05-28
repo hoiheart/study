@@ -110,6 +110,52 @@
 ### Sync / Async
 - 콜백을 사용한 비동기 작업 처리 : 작업의 단계가 깊어짐에 따라 들여쓰기 또한 급격히 깊어짐
 - Promise
+  - resolve()의 호출된 경우, 즉 해당 비동기 작업이 완료 된 경우의 핸들러인 then()
+    - then 핸들러의 두 번째 콜백은 에러가 발생했을 때에 실행되며 에러 객체를 인자로 받음
+  - reject()의 호출된 경우, 즉 해당 비동기 작업이 거부된 경우의 핸들러인 catch()
+  ``` javascript
+  function getRandomPromise () {
+    return new Promise((resolve, reject) => {
+      setTimeout(function () {
+        const destiny = Math.random();
+        if (destiny > 0.5) {
+          resolve();
+        } else {
+          reject();
+        }
+      })
+    });
+  }
+  
+  fetch('https://this-is-invalid-url.really').catch(err => { 
+    const { message } = err;
+    console.log(message); // Failed to fetch
+  });
+
+  function errorHandler(err) {
+    if (err) {
+      console.log(err);
+    }
+  }
+  fetchDocument(url)
+  .then(document => fetchAuthor(document), errorHandler)
+  .then(author => fetchPostsFromAuthor(author), errorHandler)
+  .then(posts => /* do something with posts */, errorHandler);
+  ```
+- Async / Await
+  - 함수 선언 앞에 async 키워드를 덧붙여 비동기 함수 정의
+  - 프로미스가 완료될 경우 resolve의 인자로 사용된 값을 가지며, 프로미스가 거부될 시 오류를 그대로 위로 던진다 (try catch 이용 가능)
+  ```javascript
+  async function returnTheAnswer() {
+    try {
+      const document = await fetchDocument(url);
+      const author = await fetchAuthor(document);
+      const posts = await fetchPostsFromAuthor(author);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  ```
 
 ## 알고리즘
 
