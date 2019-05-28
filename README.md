@@ -19,6 +19,10 @@
   - 변수(variable)에 담음
   - 인자(parameter)로 전달
   - 반환값(return value)으로 전달
+- 화살표 함수와 function 선언 함수의 차이
+  - 생성자로 사용할 수 없다.
+  - 함수 내에 arguments 바인딩이 존재하지 않는다.
+  - prototype 프로퍼티를 갖고 있지 않는다
 
 ### Loops and iteration
 - while 과 do while 의 차이 : 최초 실행 여부  
@@ -29,7 +33,16 @@
   } while (i < 5);
   ```
   > while(true) {break;} 패턴으로 써도 무방할 듯
-
+- forEach : break 나 return 제어가 불가능 (이터러블이라면 for-of 추천)
+  ```javascript
+  const languages = ['JavaScript', 'TypeScript', 'Python'];
+  for (const lang of languages) {
+    if (!lang.includes('Script')) {
+      break;
+    }
+    console.log(lang);
+  }
+  ```
 
 ### Array
 - `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
