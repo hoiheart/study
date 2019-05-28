@@ -3,6 +3,10 @@
 
 ## Javascript
 
+### ES6
+- let, const : 블록 수준 스코프, 호이스팅
+  > var : 함수 수준 스코프, 호이스팅
+
 ### Loops and iteration
 - while 과 do while 의 차이 : 최초 실행 여부  
   ``` javascript
