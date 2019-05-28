@@ -157,6 +157,27 @@
   }
   ```
 
+
+## Typescript
+
+### 기본 타입
+- 타입 표기는 식별자 또는 값 뒤에 콜론(:)을 붙여 value: type 의 형태로 표기  
+  `const typescript: string = "great";`
+- void : 아무런 값도 반환하지 않는 함수의 반환 타입 (null or undefined)
+- never : 아무런 값도 가질 수 없는 타입 (ex: throw new Error를 반환하는 함수)
+- 배열 타입
+  ```javascript
+  const pibonacci: Array<number> = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+  const nameAndAge: [string, number] = ['Hello', 20];
+  ```
+- 객체 타입
+  ```javascript
+  const user: { name: string; age: number; } = { name: 'Hello', age: 20 };
+  const user: { name: string; age?: number; } = { name: 'Hello' };
+  const user: { readonly name: string; age: number; } = { name: 'Hello', age: 20 };
+  ```
+  
+
 ## 알고리즘
 
 - [쇠막대기](https://programmers.co.kr/learn/courses/30/lessons/42585) : [참고](https://medium.com/@nsh235482/java-coding-programmers-stack-queue-lv2-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0-d3c482da3d98)
