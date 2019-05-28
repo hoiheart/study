@@ -11,7 +11,8 @@
     i = i + 1;
   } while (i < 5);
   ```
-  > while(true) {break;} 패턴으로 써도 
+  > while(true) {break;} 패턴으로 써도 무방할 듯
+
 
 ### Array
 - `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
