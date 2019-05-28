@@ -11,8 +11,8 @@
 - 계산된 속성 이름
   ```javascript
   const val = 'value';
-  const obj1 = { [value]: 3 };  // { value: 3 }
-  const obj2 = { ['ab' + 'c']: 3 };  // { abc: 3 }
+  const obj1 = {[val]: 3};  // { value: 3 }
+  const obj2 = {['ab' + 'c']: 3};  // { abc: 3 }
   ```
 
 ### Array
@@ -29,7 +29,7 @@
   - `arr.splice(1, 0, 'Feb')` : 추가
   - `arr.splice(4, 1, 'May')` : 대체
   
-### Loops and iteration
+### Loops / iteration
 - while 과 do while 의 차이 : 최초 실행 여부  
   ``` javascript
   let i = 0;
@@ -207,7 +207,30 @@
   ```
 - 인터섹션 타입 : 이미 존재하는 여러 타입을 모두 만족하는 타입을 표현
 - 열거형(enum) 타입 : 유한한 경우의 수를 갖는 값의 집합을 표현
+- 타입 별칭과 인터페이스의 차이
+  - 타입 별칭을 이용해서 기본 타입, 배열과 튜플, 유니온 타입 등에 새로운 이름을 붙일 수 있다 (type UUID = string). 인터페이스로는 해당 타입을 표현하는 것이 불가능하다.
+  - 타입 별칭은 실제로는 새 타입을 생성하지 않는다. 따라서 type User = { name: string; } 타입과 관련된 타입 에러가 발생했을 시 에러 메시지는 User 대신 { name: string; } 를 보여준다. 한편 인터페이스는 실제로 새 타입을 생성하고, interface User { name: string; } 과 관련된 에러 메시지에는 User 가 등장한다.
+  - 인터페이스는 곧 다룰 extends 키워드를 이용해 확장할 수 있는 반면, 타입 별칭의 경우는 그런 수단을 제공하지 않는다.
+  > 기본적으로 인터페이스로 표현할 수 있는 모든 타입은 인터페이스로 표현하고, 기본 타입에 새로운 이름을 붙이고 싶거나 유니온 타입을 명명하고 싶은 경우 등 인터페이스의 능력 밖인 부분에서만 타입 별칭을 사용
 
+
+### Interface / Class
+- Interface: 값이 특정한 형태(shape)를 갖도록 제약
+  ```javascript
+  interface User {
+    name: string;
+    readonly age: number; // 읽기 전용 속성
+    hobby?: string; // 선택 속성
+  }
+  const author: User = { name: 'hello', age: 20 };
+  
+  interface GetUserName {
+    (user: User): string;
+  }
+  const getUserName: GetUserName = function (user) {
+    return user.name;
+  };
+  ```
 
 ## 알고리즘
 
