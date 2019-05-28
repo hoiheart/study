@@ -160,7 +160,7 @@
 
 ## Typescript
 
-### 기본 타입
+### 기초 
 - 타입 표기는 식별자 또는 값 뒤에 콜론(:)을 붙여 value: type 의 형태로 표기  
   `const typescript: string = "great";`
 - void : 아무런 값도 반환하지 않는 함수의 반환 타입 (null or undefined)
@@ -172,11 +172,30 @@
   ```
 - 객체 타입
   ```javascript
-  const user: { name: string; age: number; } = { name: 'Hello', age: 20 };
-  const user: { name: string; age?: number; } = { name: 'Hello' };
-  const user: { readonly name: string; age: number; } = { name: 'Hello', age: 20 };
+  const user1: { name: string; age: number; } = { name: 'Hello1', age: 20 };
+  const user2: { name: string; age?: number; } = { name: 'Hello2' };
+  const user3: { readonly name: string; age: number; } = { name: 'Hello3', age: 25 };
   ```
-  
+- 타입 별칭
+  ```javascript
+  type UUID = string;
+  function getUser(uuid: UUID) {}
+  ```
+- 함수 타입
+  - function
+  ```javascript
+  function sum(a: number, b: number): number {
+    return (a + b);
+  }
+  function fetchVideo(url: string, subtitleLanguage?: string): void {
+    const option = { url };
+    if (subtitleLanguage) option.subtitleLanguage = true;
+  }
+  ```
+  - 화살표 함수
+  ```javascript
+  const arrowSum: (a: number, b: number) => number = (a, b) => (a + b);
+  ```
 
 ## 알고리즘
 
