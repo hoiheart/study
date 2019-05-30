@@ -15,6 +15,10 @@
   const obj2 = {['ab' + 'c']: 3};  // { abc: 3 }
   ```
 
+### Math
+- Math.max(arr) : 0이상의 숫자 중 가장 큰 숫자를 반환
+- Math.min(arr) : 0이상의 숫자 중 가장 작은 숫자를 반환
+
 ### Array
 - `arr.reduce((acc, curr, idx, arr) => acc + curr, 0)`
 - fill
