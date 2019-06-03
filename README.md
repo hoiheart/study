@@ -165,6 +165,8 @@
 
 ## Typescript
 
+변수의 타입이 런타임에서 결정되는 동적 타입 언어인 javascript의 단점을 보완하는 언어로 javascript의 상위 집합
+
 ### 기초 문법
 - 타입 표기는 식별자 또는 값 뒤에 콜론(:)을 붙여 value: type 의 형태로 표기  
   `const typescript: string = "great";`
@@ -240,8 +242,61 @@
 
 ## React
 
-### Advanced
-- Portals : UI 를 어디에 렌더링 시킬지 DOM 을 사전에 선택하여 부모 컴포넌트의 바깥에 렌더링 할 수 있게 해주는 기능
+### 기능
+- Fragment : `<></>` 로 사용 가능
+- Portals : UI 를 어디에 렌더링 시킬지 DOM 을 사전에 선택하여 부모 컴포넌트의 바깥에 렌더링
+- HOC (Higher Order Component) : 화면에서 재사용 가능한 로직만을 분리해서 component로 만들고, 재사용 불가능한 UI와 같은 다른 부분들은 parameter로 받아서 처리
+  ```javascript
+  export default class Banners extends Component {
+    componentWillMount() { /* 배너 정보 가져오기 */ }
+
+    render() {
+        return (this.props.children)(this.state.banners)
+    }
+  }
+
+  /* 재사용 */
+  <Banners>{banners => /* 홈 Banner용 UI */ }</Banners>
+  <Banners>{banners => /* 다른 Banner용 UI */ }</Banners>
+  ```
+  - wrapper hells, component life cycle 종속 등의 문제
+- Hooks : class없이 순수 함수로 state와 React life cycle을 hook 할 수 있는 기능을 제공
+  - useState
+    ```javascript
+    import { useState } from 'react';
+
+    function Example() {
+      const [name, setName] = useState("이름");
+      return <input value={name} onChange={(e) => setName(e.target.value)} />;
+    }
+    ```
+  - useEffect : componentDidMount, componentDidUpdate, componentWillUnmount를 합쳐 hook
+    ```javascript
+    function useEffect(effect: EffectCallback, inputs?: InputIdentityList)
+
+    useEffect(() => func(), []);
+    useEffect(() => func(), [count]); // count state가 변경될 때만 func 실행
+
+    /* effect 함수의 return값이 있는 경우, hook의 cleanup 함수로 인식하고 다음 effect가 실행되기 전에 실행 */
+    useEffect(() => {
+      window.addEventListener("mousemove", logMousePosition);
+      return () => {
+        window.removeEventListener("mousemove", logMousePosition);
+      };
+    }, []);
+
+    window.addEventListener("mousemove", logMousePosition); // mount 
+    /* inputs 지정된 특정 값이 업데이트 된 경우 */
+    window.removeEventListener("mousemove", logMousePosition); // cleanup
+    window.addEventListener("mousemove", logMousePosition); 
+    window.removeEventListener("mousemove", logMousePosition); // unmount
+    ```
+  - useMemo, useCallback : 렌더링 성능 최적화
+
+### 기타
+- 스타일링 방식 : CSS, Sass, CSS Module, styled-components(CSS-in-JS)
+- redux : 글로벌 상태관리
+- redux-saga : 비동기 API 호출을 generator를 이용하여 callback 메소드 없는 코드를 생성
 
 
 ## 알고리즘
