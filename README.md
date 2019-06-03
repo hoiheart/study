@@ -237,6 +237,13 @@
   };
   ```
 
+
+## React
+
+### Advanced
+- Portals : UI 를 어디에 렌더링 시킬지 DOM 을 사전에 선택하여 부모 컴포넌트의 바깥에 렌더링 할 수 있게 해주는 기능
+
+
 ## 알고리즘
 
 - [쇠막대기](https://programmers.co.kr/learn/courses/30/lessons/42585) : [참고](https://medium.com/@nsh235482/java-coding-programmers-stack-queue-lv2-%EC%87%A0%EB%A7%89%EB%8C%80%EA%B8%B0-d3c482da3d98)
