@@ -320,3 +320,24 @@
       return result;
   }
   ```
+
+
+## 참고
+
+### React vs Vue
+  - Virtual DOM 으로 빠른 렌더링
+  - 경량 라이브러리
+  - Reactive Component
+  - Server Side Rendering
+  - 라우터, 번들러, state management 와 결합이 쉬움
+  - 훌륭한 개발자 커뮤니티와 지원
+
+#### Vue
+  - Template 과 Render Function 을 모두 사용할 수 있는 옵션
+  - 간편한 Syntax 와 프로젝트 설정
+  - 빠른 렌더링과 더 작은 용량
+  
+#### React
+  - 큰 규모에서 더 빛을 발하고, 테스팅이 수월
+  - Web 과 Native 앱 개발에 모두 사용 가능
+  - 더 큰 개발자 생태계에서 오는 많은 레퍼런스와 도구들
