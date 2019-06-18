@@ -341,3 +341,17 @@
   - 큰 규모에서 더 빛을 발하고, 테스팅이 수월
   - Web 과 Native 앱 개발에 모두 사용 가능
   - 더 큰 개발자 생태계에서 오는 많은 레퍼런스와 도구들
+
+### 프로그래밍
+  - [디자인 패턴](https://joshua1988.github.io/web-development/javascript/javascript-pattern-design/)
+  - [함수형 프로그래밍](https://velog.io/@kyusung/함수형-프로그래밍-요약)
+  - [메모리 관리](https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management)
+  - [이벤트](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+  - [테스트 주도 개발](https://asfirstalways.tistory.com/296)
+
+### 브라우저
+  - [렌더링 과정](https://jeong-pro.tistory.com/90)
+  - [HTTP, SSL 통신 과정](https://aileen93.tistory.com/119)
+  - [응답 코드](https://developer.mozilla.org/ko/docs/Web/HTTP/Status)
+  - [header](https://gmlwjd9405.github.io/2019/01/28/http-header-types.html)
+  - [Restful](https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html)
