@@ -350,7 +350,8 @@
   - [테스트 주도 개발](https://asfirstalways.tistory.com/296)
 
 ### 브라우저
-  - [렌더링 과정](https://jeong-pro.tistory.com/90)
+  - [렌더링 과정](http://d2.naver.com/helloworld/59361)
+  - [렌더링 성능](https://developers.google.com/web/fundamentals/performance/rendering/?hl=ko)
   - [HTTP, SSL 통신 과정](https://aileen93.tistory.com/119)
   - [응답 코드](https://developer.mozilla.org/ko/docs/Web/HTTP/Status)
   - [header](https://gmlwjd9405.github.io/2019/01/28/http-header-types.html)
