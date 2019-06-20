@@ -15,6 +15,9 @@
   const obj2 = {['ab' + 'c']: 3};  // { abc: 3 }
   ```
 
+### ES7
+- [Decorator](https://blog-kr.zoyi.co/channel-frontend-decorator/)
+
 ### Math
 - Math.max(arr) : 0이상의 숫자 중 가장 큰 숫자를 반환
 - Math.min(arr) : 0이상의 숫자 중 가장 작은 숫자를 반환
@@ -111,6 +114,37 @@
   - 생성자로 사용할 수 없다.
   - 함수 내에 arguments 바인딩이 존재하지 않는다.
   - prototype 프로퍼티를 갖고 있지 않는다
+- [클로저](https://meetup.toast.com/posts/90)
+  - 생성될 당시의 환경을 기억하는 함수 (스코프체인을 통해 접근할 수 있는 변수나 함수가 스코프가 해제되어야 할 시점에도 사라지지 않음)
+  - 외부 함수가 종료되더라고 내부 함수가 실행되는 상태이면 내부 함수에서 참조하는 외부 함수는 닫히지 못하고 내부 함수에 의해 닫힘
+  - 캡슐화와 은닉화를 구현하는데 사용 (객체 프로퍼티의 외부 접근 차단)
+  ``` javascript
+  function counterFactory() {
+    var _count = 0;
+
+    return function() {
+      _count += 1;
+
+      return _count;
+    };
+  }
+
+  var counter = counterFactory();
+  var counter2 = counterFactory();
+
+  console.log(counter()); //1
+  console.log(counter()); //2
+  console.log(counter2()); //1
+  ```
+  - 모듈 패턴은 객체와 클로저를 적절히 혼용하여 자바스크립트에는 존재하지 않는 접근제한자를 구현
+  - 메모리 소모 및 퍼포먼스 손해
+- [Curryng](https://dev-momo.tistory.com/entry/Currying-in-Javascript)
+  - 여러개의 인자(parameter)를 갖는 함수를 단일 인자를 갖는 함수들의 연결로 바꾸는 것
+  ``` javascript
+  const sum = x => y => x + y;
+  sum(5)(7); // 12
+  ```
+  - 재사용성 향상
 
 ### Sync / Async
 - 콜백을 사용한 비동기 작업 처리 : 작업의 단계가 깊어짐에 따라 들여쓰기 또한 급격히 깊어짐
