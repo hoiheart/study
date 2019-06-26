@@ -382,6 +382,8 @@
   - [메모리 관리](https://developer.mozilla.org/ko/docs/Web/JavaScript/Memory_Management)
   - [이벤트](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
   - [테스트 주도 개발](https://asfirstalways.tistory.com/296)
+  - 자료 구조 [1](https://hackersstudy.tistory.com/26), [2](https://m.blog.naver.com/PostView.nhn?blogId=jang_delay&logNo=220700885090&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+
 
 ### 브라우저
   - [렌더링 과정](http://d2.naver.com/helloworld/59361)
