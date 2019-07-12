@@ -4,6 +4,9 @@
 
 ## Javascript
 
+### 참고
+- [JavaScript 재입문하기 (JS ​튜토리얼)](https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript)
+
 ### ES6
 - let, const : 블록 수준 스코프, 호이스팅 (변수 선언 후 재할당 가능)
 - var : 함수 수준 스코프, 호이스팅 (변수 선언 전 값 할당 가능)
@@ -104,6 +107,19 @@
   
   console.log(...iterableObj); // [1, 2, 3]
   ```
+- Generator 함수로 이터러블 객체를 만들 수 있다
+  ```javascript
+  function* numberGen() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+
+  // 1, 2, 3이 순서대로 출력됩니다.
+  for (let n of numberGen()) {
+    console.log(n);
+  }
+  ```
 
 ### Function
 - Javascript의 함수는 1급 객체 : HoC, Currying, Memoization이 가능
@@ -196,6 +212,20 @@
   }
   ```
 
+### Class
+- Getter / Setter : 변수 get, set
+- Static : 인스턴스화 없이 호출, 인스턴스에서는 호출안됨, 유틸리티 함수 생성용
+
+### Pattern
+- 싱글톤 : 특정 클래스의 객체를 한개만 유지 (객체 리터럴과 동일)
+- 팩토리 : 비슷한 객체를 공장에서 찍어내듯이 반복적으로 생성
+- 데코레이터 : 런타임시 객체에 동적으로 부가기능을 추가할 수 있는 패턴
+- 옵저버 : 브라우저 이벤트 (구독), 객체간의 결합도를 낮춤
+- 모듈 : 캡슐화, 즉시실행함수로 private 변수 구현, 유닛테스트 어려움, 내부 오버라이딩 불가
+- 이벤트 델리게이트 : 여러 DOM에 이벤트 핸들러
+- 프록시 : 여러개의 요청을 하나로 합쳐 서버 요청 최적화
+- 메모이제이션 : 작업을 캐시로 저장하여 동일한 요청의 경우 캐시 결과값으로 처리 (동일한 데이터일때만 사용, 메모리 소모)
+- 콜백 : 비동기 요청에 대한 순서 보장
 
 ## Typescript
 
